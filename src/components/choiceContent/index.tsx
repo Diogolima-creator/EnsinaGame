@@ -1,6 +1,7 @@
 import * as C from './styles'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { ArrowBendUpLeft } from 'phosphor-react'
 import { Grades } from '../../services/Grades'
 import { useGame } from '../../context/GameContext'
 
@@ -30,7 +31,7 @@ export const ChoiceContent = () => {
   return(
     <C.Container>
         <C.Header>
-          <button onClick={() => navigate('/subject')}>x</button>
+          <button onClick={() => navigate('/subject')}><ArrowBendUpLeft size={32}/></button>
         </C.Header>
         <C.Title>
           Escolha os conteúdos que voce quer estudar:

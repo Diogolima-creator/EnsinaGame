@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useGame } from '../../context/GameContext'
 import { PopOut } from '../popOut'
 import { Grades } from '../../services/Grades'
+import { ArrowBendUpRight } from 'phosphor-react'
 
 type SubjectsProps = {
   title: string,
@@ -27,7 +28,7 @@ export const MenuSubject = () => {
   return(
     <C.Container>
       <C.Header>
-        <button onClick={()=> navigate('/difficulty')}>x</button>
+        <button onClick={()=> navigate('/difficulty')}><ArrowBendUpRight size={32}/></button>
       </C.Header>
       <C.Title>
           Escolha a materia que você quer estudar hoje

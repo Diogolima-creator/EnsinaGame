@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useGame } from '../../context/GameContext'
 import Questions from '../../services/Questions'
+import { ArrowLeft, ArrowRight } from "phosphor-react"
 
 export const ReviewSurveys = () => {
 
@@ -25,9 +26,9 @@ export const ReviewSurveys = () => {
   return( 
     <C.Container>
         <C.HeaderReview>
-            <C.HeaderReviewItem cursor={"pointer"} scale={"1.1"} onClick={()=> handleToNextToBack('Back')}>q</C.HeaderReviewItem>
+            <C.HeaderReviewItem cursor={"pointer"} scale={"1.1"} onClick={()=> handleToNextToBack('Back')}><ArrowLeft size={32}/></C.HeaderReviewItem>
             <C.HeaderReviewItem cursor={""} scale={"1"}>{CountQuestions}</C.HeaderReviewItem>
-            <C.HeaderReviewItem cursor={"pointer"} scale={"1.1"} onClick={()=> handleToNextToBack('Next')}>w</C.HeaderReviewItem>
+            <C.HeaderReviewItem cursor={"pointer"} scale={"1.1"} onClick={()=> handleToNextToBack('Next')}><ArrowRight size={32}/></C.HeaderReviewItem>
         </C.HeaderReview>
         <C.QuestionAnswer>
           <C.Question>

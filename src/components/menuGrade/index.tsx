@@ -1,6 +1,7 @@
 import * as C from './styles'
 import { useNavigate } from 'react-router-dom'
 import { useGame } from '../../context/GameContext'
+import { ArrowBendUpRight } from 'phosphor-react'
 
 export const MenuDifficulty = () => {
 
@@ -17,7 +18,7 @@ export const MenuDifficulty = () => {
   return(
     <C.Container>
       <C.Header>
-        <button onClick={() => navigate('/home')}>x</button>
+        <button onClick={() => navigate('/home')}><ArrowBendUpRight size={32}/></button>
       </C.Header>
       <C.Title>
           Escolha a série que você está estudando 
