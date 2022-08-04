@@ -1,0 +1,23 @@
+import Abelha from './Abelha.jpg'
+import Cabra from './Cabra.jpg'
+import Cachorro from './Cachorro.jpg'
+import Camelo from './Camelo.jpg'
+import Cobra from './Cobra.jpg'
+import Dinossauro from './Dinossauro.jpg'
+import Dromedário from './Dromedário.jpg'
+import Elefante from './Elefante.jpg'
+import Ema from './Ema.jpg'
+import Foca from './foca.jpg'
+import Formiga from './formiga.jpg'
+import Golfinho from './golfinho.jpg'
+import Leao from './Leao.jpg'
+import Macaco from './Macaco.png'
+import Panda from './Panda.jpeg'
+import Pato from './Pato.jpg'
+import Raposa from './Raposa.jpg'
+import Tartaruga from './Tartaruga.jpg'
+import Urso from './Urso.jpg'
+import Zebra from './Zebra.jpg'
+
+export const Animals = { Abelha,Cabra,Cachorro,Camelo,Cobra,Dinossauro,Dromedário,Elefante,Ema,Foca,Formiga,Golfinho,
+Leao,Macaco,Panda,Pato,Raposa,Tartaruga,Urso,Zebra}
