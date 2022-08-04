@@ -1,6 +1,4 @@
 import * as C from './styles'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShare } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
 import { useGame } from '../../context/GameContext'
 import { PopOut } from '../popOut'
@@ -29,7 +27,7 @@ export const MenuSubject = () => {
   return(
     <C.Container>
       <C.Header>
-        <button onClick={()=> navigate('/difficulty')}><FontAwesomeIcon icon={faShare}></FontAwesomeIcon></button>
+        <button onClick={()=> navigate('/difficulty')}>x</button>
       </C.Header>
       <C.Title>
           Escolha a materia que você quer estudar hoje
