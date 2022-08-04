@@ -2,7 +2,7 @@ import * as C from './styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShare } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
-import {  useGame } from '../../context/GameContext'
+import { useGame } from '../../context/GameContext'
 import { PopOut } from '../popOut'
 import { Grades } from '../../services/Grades'
 
