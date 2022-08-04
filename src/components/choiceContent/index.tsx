@@ -1,7 +1,5 @@
 import * as C from './styles'
 import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShare } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { Grades } from '../../services/Grades'
 import { useGame } from '../../context/GameContext'
@@ -32,7 +30,7 @@ export const ChoiceContent = () => {
   return(
     <C.Container>
         <C.Header>
-          <button onClick={() => navigate('/subject')}><FontAwesomeIcon icon={faShare}></FontAwesomeIcon></button>
+          <button onClick={() => navigate('/subject')}>x</button>
         </C.Header>
         <C.Title>
           Escolha os conteúdos que voce quer estudar:

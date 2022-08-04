@@ -1,8 +1,6 @@
 import * as C from './styles'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { useGame } from '../../context/GameContext'
 import Questions from '../../services/Questions'
 
@@ -27,9 +25,9 @@ export const ReviewSurveys = () => {
   return( 
     <C.Container>
         <C.HeaderReview>
-            <C.HeaderReviewItem cursor={"pointer"} scale={"1.1"} onClick={()=> handleToNextToBack('Back')}><FontAwesomeIcon icon={faArrowLeft}/></C.HeaderReviewItem>
+            <C.HeaderReviewItem cursor={"pointer"} scale={"1.1"} onClick={()=> handleToNextToBack('Back')}>q</C.HeaderReviewItem>
             <C.HeaderReviewItem cursor={""} scale={"1"}>{CountQuestions}</C.HeaderReviewItem>
-            <C.HeaderReviewItem cursor={"pointer"} scale={"1.1"} onClick={()=> handleToNextToBack('Next')}><FontAwesomeIcon icon={faArrowRight}/></C.HeaderReviewItem>
+            <C.HeaderReviewItem cursor={"pointer"} scale={"1.1"} onClick={()=> handleToNextToBack('Next')}>w</C.HeaderReviewItem>
         </C.HeaderReview>
         <C.QuestionAnswer>
           <C.Question>

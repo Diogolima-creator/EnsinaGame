@@ -1,7 +1,7 @@
 import * as C from './styles'
 import { useNavigate } from 'react-router-dom';
 import { useGame } from '../../context/GameContext'
-import { GradesNotas, Guides } from '../../services/Guides';
+import { GradesNotas} from '../../services/Guides';
 import ReactPlayer from 'react-player'
 
 export const FinishSurveys = () => {
