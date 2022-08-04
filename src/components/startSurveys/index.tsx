@@ -1,10 +1,8 @@
 import * as C from './styles'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+
 
 export const StartSurveys = ({timer}:any) => {
 
-  const navigate = useNavigate()
 
   return( 
     <C.Container>

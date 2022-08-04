@@ -7,7 +7,8 @@ import Imagem6 from './biologia.jpg'
 import Imagem7 from './quimica.jpg'
 import Imagem8 from './fisica.jpg'
 
-const Subjects = [
+
+export const Subjects = [
   { class:'Português', img: Imagem1, alt: ''}, 
   { class:'Matemática', img: Imagem2, alt: ''}, 
   { class:'Historia', img: Imagem3, alt: ''}, 
@@ -17,4 +18,3 @@ const Subjects = [
   { class:'Química', img: Imagem7, alt: ''}, 
   { class:'Física', img: Imagem8, alt: ''}]
 
-export default Subjects

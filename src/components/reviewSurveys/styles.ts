@@ -32,7 +32,15 @@ export const HeaderReview = styled.header`
       padding:20px;
       
 `;
-export const HeaderReviewItem = styled.h1(({cursor,scale}) =>`
+
+interface Props {
+      cursor: string
+      scale: string
+      fs: number
+      color: string
+}
+
+export const HeaderReviewItem = styled.h1<Pick<Props, 'cursor' | 'scale'>> `
       display:flex;
       justify-content:center;
       align-items:center;
@@ -41,13 +49,13 @@ export const HeaderReviewItem = styled.h1(({cursor,scale}) =>`
       margin:0px;
       padding:0px; 
       width:35px;
-      cursor:${cursor};
+      cursor:${p => p.cursor};
       transition: .5;
 
       :hover{
-            transform: scale(${scale});
+            transform: scale(${p => p.scale});
       }
-`);
+`;
 
 export const Question = styled.div`
       font-size:24px;
@@ -64,21 +72,21 @@ export const Answer = styled.div`
     
 `;
 
-export const AnswerItem = styled.h1(({color, fs}) => `
+export const AnswerItem = styled.h1<Pick<Props, 'fs' | 'color'>>`
       border:2px solid black;
       padding: 5px 20px;
       text-align:Center;
       width:300px;
-      font-size:${fs}px;
+      font-size:${p => p.fs}px;
       transition: .1s;
-      background-color: ${color};
+      background-color: ${p => p.color};
       cursor: default;
 
       img{
             width:300px;
             height:220px; 
       }
-`);
+`;
 
 export const Footer = styled.footer`
       margin-bottom:40px;

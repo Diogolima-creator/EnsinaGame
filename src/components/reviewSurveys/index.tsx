@@ -11,7 +11,7 @@ export const ReviewSurveys = () => {
   const[ CountQuestions, setCountQuestions ] = useState(1)
   const[ QuestionsPosition, setQuestionsPosition ] = useState(0)
   const navigate = useNavigate()
-  const {state} = useGame()
+  const { gradeSelectedPos, subjectSelectedPos, reviewResults } = useGame()
 
   const handleToNextToBack = (Move:string) => {
       if(Move === 'Back' && QuestionsPosition-1 !== -1){
@@ -28,23 +28,23 @@ export const ReviewSurveys = () => {
     <C.Container>
         <C.HeaderReview>
             <C.HeaderReviewItem cursor={"pointer"} scale={"1.1"} onClick={()=> handleToNextToBack('Back')}><FontAwesomeIcon icon={faArrowLeft}/></C.HeaderReviewItem>
-            <C.HeaderReviewItem>{CountQuestions}</C.HeaderReviewItem>
+            <C.HeaderReviewItem cursor={""} scale={"1"}>{CountQuestions}</C.HeaderReviewItem>
             <C.HeaderReviewItem cursor={"pointer"} scale={"1.1"} onClick={()=> handleToNextToBack('Next')}><FontAwesomeIcon icon={faArrowRight}/></C.HeaderReviewItem>
         </C.HeaderReview>
         <C.QuestionAnswer>
           <C.Question>
-              {Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].Question}
+              {Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Question}
           </C.Question>
-          {Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg !== '' && 
-          <img src={Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg} alt="">
+          {Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' && 
+          <img src={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg} alt="">
             
           </img>}
           <C.Answer>
-              {(Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionType === 'OnlySelectQuestion' || Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionType === 'ImageInQuestion') && Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string,key:number) => (
-                key === Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].Answer ? <C.AnswerItem fs={Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'green'}>{alternative}</C.AnswerItem> : key === state.reviewResults[QuestionsPosition] ? <C.AnswerItem fs={Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'red'}>{alternative}</C.AnswerItem> : <C.AnswerItem fs={Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'white'}>{alternative}</C.AnswerItem>
+              {(Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'OnlySelectQuestion' || Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'ImageInQuestion') && Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string,key:number) => (
+                key === Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Answer ? <C.AnswerItem fs={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'green'}>{alternative}</C.AnswerItem> : key === reviewResults[QuestionsPosition] ? <C.AnswerItem fs={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'red'}>{alternative}</C.AnswerItem> : <C.AnswerItem fs={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'white'}>{alternative}</C.AnswerItem>
               ))}
-              {Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionType === 'AlternativesInImage' && Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string,key:number) => (
-                key === Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].Answer ? <C.AnswerItem fs={Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'green'}><img src={alternative} alt='' /></C.AnswerItem> : key === state.reviewResults[QuestionsPosition] ? <C.AnswerItem fs={Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'red'}><img src={alternative} alt='' /></C.AnswerItem> : <C.AnswerItem fs={Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'white'}><img src={alternative} alt='' /></C.AnswerItem>
+              {Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'AlternativesInImage' && Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string,key:number) => (
+                key === Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Answer ? <C.AnswerItem fs={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'green'}><img src={alternative} alt='' /></C.AnswerItem> : key === reviewResults[QuestionsPosition] ? <C.AnswerItem fs={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'red'}><img src={alternative} alt='' /></C.AnswerItem> : <C.AnswerItem fs={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} color={'white'}><img src={alternative} alt='' /></C.AnswerItem>
               ))}
           </C.Answer>
         </C.QuestionAnswer>

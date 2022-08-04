@@ -10,4 +10,4 @@ import Oito from './8.jpeg'
 import Nove from './9.jpeg'
 import Dez from './10.mp4'
 
-export const Notas = [Zero,Um,Dois,Três,Quatro,Cinco,Seis,Sete,Oito,Nove,Dez]
+export const Notas = {Zero,Um,Dois,Três,Quatro,Cinco,Seis,Sete,Oito,Nove,Dez}

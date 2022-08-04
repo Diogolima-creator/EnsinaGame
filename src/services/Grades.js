@@ -1,32 +1,12 @@
-import Imagem1 from '../imagens/Subjects/portugues.jpg'
-import Imagem2 from '../imagens/Subjects/matematica.jpg'
-import Imagem3 from '../imagens/Subjects/historia.jpg'
-import Imagem4 from '../imagens/Subjects/geografia.jpg'
-import Imagem5 from '../imagens/Subjects/ingles.jpg'
-import Imagem6 from '../imagens/Subjects/biologia.jpg'
-import Imagem7 from '../imagens/Subjects/quimica.jpg'
-import Imagem8 from '../imagens/Subjects/fisica.jpg'
+import { Subjects } from '../imagens/Subjects'
 
-let GradeOne = {}
-let GradeTwo = {}
-let GradeThree = {}
-let GradeFour = {}
-let GradeFive = {}
-let GradeSix = {}
-let GradeSeven = {}
-let GradeEight = {}
-let GradeNine = {}
-let GradeTen = {}
-let GradeEleven = {}
-let GradeTwelve = {}
-let GradeThirteen = {}
 
-const Grades = [
-   GradeOne = {
+export const Grades = [
+   {
     subjects: [
       { 
           title: 'Português',
-          img: Imagem1,
+          img: Subjects[0].img,
           content: [
             'Simbolização;',
             'Idéia de representar (falar, gestos, desenhos e escritas);',
@@ -84,7 +64,7 @@ const Grades = [
     },
       {
           title: 'Matemática',
-          img: Imagem2,
+          img: Subjects[1].img,
           content: [
             'Construção de números.',
             'Compreensão da organização do SND.',
@@ -124,7 +104,7 @@ const Grades = [
     },
       {
         title: 'Ciências',
-        img: Imagem6,
+        img: Subjects[5].img,
         content: [
           'Movimento aparente do sol.',
           'Movimento de rotina da terra em relação ao sol.',
@@ -149,7 +129,7 @@ const Grades = [
     },
       {
         title: 'Historia',
-        img: Imagem3,
+        img: Subjects[2].img,
         content: [
           'A criança e a percepção do tempo.',
           'A criança e o reconhecimento da fase em que ela se encontra.',
@@ -186,7 +166,7 @@ const Grades = [
     },
       {
         title: 'Geografia',
-        img: Imagem4,
+        img: Subjects[3].img,
         content: [
           'Incentivar o aluno a ler os espaços, partindo dos lugares que lhe são mais próximos: a escola e a casa.',
           'Saber utilizar a linguagem cartográfica para obtê-lo informações e representar a espacialidade dos fenômenos geográficos.',
@@ -208,234 +188,11 @@ const Grades = [
     },
       {
         title: 'Inglês',
-        img:Imagem5,
+        img: Subjects[4].img,
         content: [
             'Vocabulário', 'Estruturas'
         ]
     }
   ]
-  },
-  GradeTwo = {
-    subjects: {
-      Português:{
-          content: {
-
-          }
-    },
-      Matemática:{
-          content: {
-          
-        }
-    },
-      Ciências:{
-        content: {
-
-        }
-    },
-      Historia:{
-        content: {
-        
-      }
-    },
-      EducaçãoFísica:{
-        content: {
-
-        }
-    },
-      Geografia:{
-      content: {
-        
-      }
-    },
-      Inglês:{
-        content: {
-
-      }
-    },
-      Arte:{
-        content: {
-      
-    }
-    },
-      Informática:{
-        content:{
-
-        }
-    }
-  }
-  },
-  GradeThree = {
-    subjects: {
-      Português:{
-          content: {
-
-          }
-    },
-      Matemática:{
-          content: {
-          
-        }
-    },
-      Ciências:{
-        content: {
-
-        }
-    },
-      Historia:{
-        content: {
-        
-      }
-    },
-      EducaçãoFísica:{
-        content: {
-
-        }
-    },
-      Geografia:{
-      content: {
-        
-      }
-    },
-      Inglês:{
-        content: {
-
-      }
-    },
-      Arte:{
-        content: {
-      
-    }
-    },
-      Informática:{
-        content:{
-
-        }
-    }
-  }        
-  },
-  GradeFour = {
-    subjects: {
-      Português:{
-          content: {
-
-          }
-    },
-      Matemática:{
-          content: {
-          
-        }
-    },
-      Ciências:{
-        content: {
-
-        }
-    },
-      Historia:{
-        content: {
-        
-      }
-    },
-      EducaçãoFísica:{
-        content: {
-
-        }
-    },
-      Geografia:{
-      content: {
-        
-      }
-    },
-      Inglês:{
-        content: {
-
-      }
-    },
-      Arte:{
-        content: {
-      
-    }
-    },
-      Informática:{
-        content:{
-
-        }
-    }
-  }      
-  },
-  GradeFive = {
-    subjects: {
-      Português:{
-          content: {
-
-          }
-    },
-      Matemática:{
-          content: {
-          
-        }
-    },
-      Ciências:{
-        content: {
-
-        }
-    },
-      Historia:{
-        content: {
-        
-      }
-    },
-      EducaçãoFísica:{
-        content: {
-
-        }
-    },
-      Geografia:{
-      content: {
-        
-      }
-    },
-      Inglês:{
-        content: {
-
-      }
-    },
-      Arte:{
-        content: {
-      
-    }
-    },
-      Informática:{
-        content:{
-
-        }
-    }
-  }      
-  },
-  GradeSix = {
-    
-  },
-  GradeSeven = {
-
-  },
-  GradeEight = {
-
-  },
-  GradeNine = {
-    
-  },
-  GradeTen = {
-
-  },
-  GradeEleven = {
-
-  },
-  GradeTwelve = {
-    
-  },
-  GradeThirteen = {
-
   }
 ]
-
-
-export default Grades;

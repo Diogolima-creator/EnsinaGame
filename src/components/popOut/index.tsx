@@ -11,12 +11,12 @@ type PopOutProps = {
 }
 
 const closePopOut = () => {
-  document.getElementById('popOut').style.display = 'none'
+  document.getElementById('popOut')!.style.display = 'none'
 } 
 
 export const PopOut = (Props:PopOutProps) => {
   const navigate = useNavigate()
-  const {state, dispatch} = useGame()
+  const { gradeSelectedPos } = useGame()
 
   return(
     <C.Container id={Props.id}>
@@ -31,7 +31,7 @@ export const PopOut = (Props:PopOutProps) => {
         </C.Header>
         <C.ButtonFooter>
           <C.Button onClick={() => navigate('/surveys')}>{Props.button1}</C.Button>
-          <C.Button disabled={state.gradeSelectedPos < 5} onClick={() => navigate('/contents')}>{Props.button2}</C.Button>
+          <C.Button disabled={gradeSelectedPos < 5} onClick={() => navigate('/contents')}>{Props.button2}</C.Button>
         </C.ButtonFooter>
         <C.Title>
             {Props.text2}

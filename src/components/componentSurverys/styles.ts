@@ -59,13 +59,17 @@ export const Answer = styled.div`
     
 `;
 
-export const AnswerItem = styled.h1(({fs})=>`
+interface Props {
+      fs: number
+}
+
+export const AnswerItem = styled.h1<Pick<Props, 'fs'>>`
       border:2px solid black;
       padding: 5px 20px;
       text-align:Center;
       cursor:pointer;
       transition: .1s;
-      font-size:${fs}px;
+      font-size:${p => p.fs}px;
       width:300px;
 
       img{
@@ -77,4 +81,4 @@ export const AnswerItem = styled.h1(({fs})=>`
         background-color:black;
         color:white;
       }
-`);
+`;

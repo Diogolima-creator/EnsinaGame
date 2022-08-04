@@ -1,7 +1,7 @@
 import * as C from './styles'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { GameAction, useGame } from "../../context/GameContext"
+import { useGame } from "../../context/GameContext"
 import Questions from '../../services/Questions'
 import { QuestionsArray } from '../../services/Questions'
 export const ComponentSurveys = () => {
@@ -12,30 +12,24 @@ export const ComponentSurveys = () => {
   const[ CorrectAnswer, setCorrectAnswer] = useState(0)
   const[ randomized, setRandomized] = useState(0)
   const navigate = useNavigate()
-  const { state, dispatch } = useGame()
-
-  const handleChoiceAlternative = (chosen:Number) => {
-    if(chosen === Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].Answer){
+  const { gradeSelectedPos, subjectSelectedPos, 
+    reviewResults, setReviewResults, setAnswerCorrects } = useGame()
+  
+  const handleChoiceAlternative = (chosen:number) => {
+    if(chosen === Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Answer){
       setCorrectAnswer(CorrectAnswer+1)
     }
     setQuestionsPosition(QuestionsPosition+1)
     setCountQuestions(CountQuestions+1)
-    dispatch({
-      type: GameAction.setreviewResults,
-      payload: [...state.reviewResults,chosen]
-    })
+    let newArray = [...reviewResults, chosen]
+    setReviewResults(newArray)
+
     if(QuestionsPosition === 9){
-      if(chosen === Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].Answer){
-        dispatch({
-          type: GameAction.setanswerCorrects,
-          payload: CorrectAnswer + 1
-        })
+      if(chosen === Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Answer){
+        setAnswerCorrects(CorrectAnswer+1)
         navigate('/surveysResults')
       }else{
-        dispatch({
-          type: GameAction.setanswerCorrects,
-          payload: CorrectAnswer
-        })
+        setAnswerCorrects(CorrectAnswer)
         navigate('/surveysResults')
       }
     }
@@ -49,7 +43,7 @@ export const ComponentSurveys = () => {
   }
 
   if(randomized === 0){
-    shuffle(Questions[state.gradeSelectedPos][state.subjectSelectedPos])
+    shuffle(Questions[gradeSelectedPos][subjectSelectedPos])
     setRandomized(1)
   }
   
@@ -60,18 +54,18 @@ export const ComponentSurveys = () => {
         </C.NumberQuestion>
         <C.QuestionAnswer>
           <C.Question>
-              {Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].Question}
+              {Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Question}
           </C.Question>
-          {Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg !== '' && 
-          <img src={Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg} alt="" width={Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].WidthImg}>
+          {Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' && 
+          <img src={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg} alt="" width={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].WidthImg}>
             
           </img>}
           <C.Answer>
-              { (Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionType === 'OnlySelectQuestion' || Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionType === 'ImageInQuestion') && Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string,key:number) => (
-                <C.AnswerItem fs={Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} onClick={() => handleChoiceAlternative(key)}>{alternative}</C.AnswerItem>
+              { (Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'OnlySelectQuestion' || Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'ImageInQuestion') && Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string,key:number) => (
+                <C.AnswerItem fs={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} onClick={() => handleChoiceAlternative(key)}>{alternative}</C.AnswerItem>
               ))}
-              {Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].QuestionType === 'AlternativesInImage' && Questions[state.gradeSelectedPos][state.subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string,key:number) => (
-                <C.AnswerItem onClick={() => handleChoiceAlternative(key)}><img src={alternative} alt='' /></C.AnswerItem>
+              {Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'AlternativesInImage' && Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string,key:number) => (
+                <C.AnswerItem fs= {16} onClick={() => handleChoiceAlternative(key)}><img src={alternative} alt='' /></C.AnswerItem>
               ))}
           </C.Answer>
         </C.QuestionAnswer>

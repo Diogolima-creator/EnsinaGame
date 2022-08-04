@@ -1,4 +1,4 @@
-import { Notas} from '../imagens/Notas/index.js'
+import { Notas } from '../imagens/Notas';
 
 interface Guides {
   Guides: [string,string,string,string,string]
@@ -33,15 +33,15 @@ export const Guides:Guides[][] = [
 ]
 
 export const GradesNotas:Notas[] = [
-  {NotasImg: Notas[0]},
-  {NotasImg: Notas[1]},
-  {NotasImg: Notas[2]},
-  {NotasImg: Notas[3]},
-  {NotasImg: Notas[4]},
-  {NotasImg: Notas[5]},
-  {NotasImg: Notas[6]},
-  {NotasImg: Notas[7]},
-  {NotasImg: Notas[8]},
-  {NotasImg: Notas[9]},
-  {NotasImg: Notas[10]}
+  {NotasImg: Notas.Zero},
+  {NotasImg: Notas.Um},
+  {NotasImg: Notas.Dois},
+  {NotasImg: Notas.Três},
+  {NotasImg: Notas.Quatro},
+  {NotasImg: Notas.Cinco},
+  {NotasImg: Notas.Seis},
+  {NotasImg: Notas.Sete},
+  {NotasImg: Notas.Oito},
+  {NotasImg: Notas.Nove},
+  {NotasImg: Notas.Dez}
 ]
