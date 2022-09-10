@@ -54,7 +54,7 @@ Instale meu projeto usando gitBash e com npm
     
 ## Deploy
 
-Você pode acessar o projeto também por este link: **ensina-game.vercel.app**
+Você pode acessar o projeto também por este link: **https://ensina-game.vercel.app**
 
 O deploy foi feito pela vercel.
 
