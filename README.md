@@ -37,8 +37,7 @@ programação.
 
 
 
-https://user-images.githubusercontent.com/62246037/189472111-63dad595-31b8-487f-961f-5965638f5785.mp4
-
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/62246037/189472344-59d971d2-e933-433e-ba20-feb4a12457a3.gif)
 
 ## Instalação
 
