@@ -16,7 +16,6 @@ export const Menu = styled.ul`
       list-style:none;
 
       button{
-        font-family: 'Indie Flower', cursive;
         font-size:24px;
         width:140px;
         padding:10px;
@@ -26,6 +25,7 @@ export const Menu = styled.ul`
         color:white;
         border-radius:45px;
         cursor:pointer;
+        transition: .5s;
       }
       
       button:hover{
@@ -38,5 +38,6 @@ export const Title = styled.h1`
 `;
 
 export const Footer = styled.footer`
+      
       font-weight:bold;
 `;

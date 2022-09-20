@@ -29,7 +29,7 @@ const initialData = {
     setReviewResults: () => {},
     answerCorrects: 0,
     setAnswerCorrects: () => {},
-    gradeSelectedPos: 0,
+    gradeSelectedPos: 1,
     setGradeSelectedPos: () => {},
     subjectSelectedPos: 0,
     setSubjectSelectedPos: () => {}

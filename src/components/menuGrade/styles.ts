@@ -17,7 +17,6 @@ export const Header = styled.header`
       width:100%;
 
       button{
-        transform: scaleX(-1);
         font-family: 'Indie Flower', cursive;
         font-size:24px;
         width:45px;
@@ -30,12 +29,17 @@ export const Header = styled.header`
         color:white;
         border-radius:45px;
         cursor:pointer;
+        transition: .4s;
+      }
+
+      button:hover{
+        transform: scale(1.10);
       }
 `;
 
 export const Title = styled.p`
-      font-size:22px;
-      font-weight:bold;
+      font-size:24px;
+
       strong{
         color:#0066cc;
       }
@@ -67,7 +71,6 @@ export const GradeItem = styled.div`
       border: 10px solid #0066cc;
       border-radius:15px;
       color:white;
-      font-weight:bold;
       cursor:pointer;
       box-shadow: 5px 5px 8px 3px rgba(0, 102, 204,0.63);
       transition: .3s;

@@ -20,7 +20,7 @@ export const Timer = styled.div`
       margin-bottom:120px;
       h1{
         text-align:center;
-        width:100px;
+        width:90px;
         font-size: 72px;
         border:3px solid black;
         border-radius:360px;

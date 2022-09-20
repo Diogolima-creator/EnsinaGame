@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+interface QuestionProps {
+      QuestionType: string
+}
+
+interface AnswerProps {
+      fs: number
+      AnswerType: string
+}
 
 export const Container = styled.div`
       background-color:white;
@@ -9,19 +17,18 @@ export const Container = styled.div`
       align-items:center;
       flex-direction:column; 
       border-radius:5px;
-
-      img{
-            height:500px;
-      }
 `;
 
-export const QuestionAnswer = styled.div`
+export const QuestionAnswer = styled.div<Pick<QuestionProps, 'QuestionType' >>`
       display:flex;
       flex-direction:column;
       width:100%;
       height:680px;
       justify-content:center;
       align-items:center;
+
+      ${p => p.QuestionType === 'OnlySelectQuestion' && 'img{ width:700px; height:400px; }'}
+      ${p => p.QuestionType === 'ImageInQuestion' && 'img{ height:520px; }'}
 `;
 
 export const NumberQuestion = styled.header`
@@ -41,13 +48,14 @@ export const NumberQuestionItem = styled.h1`
       border-radius:45px;
       margin:0px;
       padding:0px; 
-      width:35px;
-
+      width:40px;
+      height:40px;
+      font-size:26px;
 `;
 
 export const Question = styled.div`
-      font-size:24px;
-      margin-bottom:50px;
+      font-size:26px;
+      margin-bottom:0px;
 `;
 
 
@@ -59,23 +67,28 @@ export const Answer = styled.div`
     
 `;
 
-interface Props {
-      fs: number
-}
 
-export const AnswerItem = styled.h1<Pick<Props, 'fs'>>`
+export const AnswerItem = styled.p<Pick<AnswerProps, 'fs' | 'AnswerType'>>`
       border:2px solid black;
-      padding: 5px 20px;
+      padding: 5px 10px;
       text-align:Center;
       cursor:pointer;
       transition: .1s;
       font-size:${p => p.fs}px;
       width:300px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
 
       img{
         width:300px;
         height:280px; 
       }
+
+      ${p => p.AnswerType === 'OnlySelectQuestion' && 'img{ width:300px; height:280px; }'}
+      ${p => p.AnswerType === 'AlternativesInImage' && 'img{ width:300px; height:200px; }'}
+      ${p => p.AnswerType === 'OnlySelectQuestionWithImage' && 'img{ width:300px; height:200px; }'}
 
       :hover{
         background-color:black;

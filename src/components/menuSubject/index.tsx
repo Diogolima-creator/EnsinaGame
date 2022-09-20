@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useGame } from '../../context/GameContext'
 import { PopOut } from '../popOut'
 import { Grades } from '../../services/Grades'
-import { ArrowBendUpRight } from 'phosphor-react'
+import { ArrowBendUpLeft } from 'phosphor-react'
 
 type SubjectsProps = {
   title: string,
@@ -18,17 +18,17 @@ export const MenuSubject = () => {
   const { setSubjectSelected, setSubjectSelectedPos, gradeSelectedPos, subjectSelected} = useGame()
 
   const openPopOut = (subject:string, position:number) => {
-   
+   if(position < 1){
     setSubjectSelected(subject)
     setSubjectSelectedPos(position)
-
    document.getElementById('popOut')!.style.display = 'inline'
+   }
   } 
 
   return(
     <C.Container>
       <C.Header>
-        <button onClick={()=> navigate('/difficulty')}><ArrowBendUpRight size={32}/></button>
+        <button onClick={()=> navigate('/difficulty')}><ArrowBendUpLeft size={32}/></button>
       </C.Header>
       <C.Title>
           Escolha a materia que você quer estudar hoje

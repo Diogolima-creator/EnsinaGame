@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+interface QuestionProps {
+      QuestionType: string
+}
+
+interface AnswerProps {
+      cursor: string
+      scale: string
+      fs: number
+      color: string
+      AnswerType: string
+}
 
 export const Container = styled.div`
       background-color:white;
@@ -9,19 +20,18 @@ export const Container = styled.div`
       align-items:center;
       flex-direction:column; 
       border-radius:5px;
-
-      img{
-            height:400px;
-      }
 `;
 
-export const QuestionAnswer = styled.div`
+export const QuestionAnswer = styled.div<Pick<QuestionProps, 'QuestionType'>> `
       display:flex;
       flex-direction:column;
       width:100%;
       height:655px;
       justify-content:center;
       align-items:center;
+
+      ${p => p.QuestionType === 'OnlySelectQuestion' && 'img{ width:700px; height:400px; }'}
+      ${p => p.QuestionType === 'ImageInQuestion' && 'img{ width:300px; height:400px; }'}
 `;
 
 export const HeaderReview = styled.header`
@@ -33,14 +43,7 @@ export const HeaderReview = styled.header`
       
 `;
 
-interface Props {
-      cursor: string
-      scale: string
-      fs: number
-      color: string
-}
-
-export const HeaderReviewItem = styled.h1<Pick<Props, 'cursor' | 'scale'>> `
+export const HeaderReviewItem = styled.p<Pick<AnswerProps, 'cursor' | 'scale'>> `
       display:flex;
       justify-content:center;
       align-items:center;
@@ -48,10 +51,12 @@ export const HeaderReviewItem = styled.h1<Pick<Props, 'cursor' | 'scale'>> `
       border-radius:45px;
       margin:0px;
       padding:0px; 
-      width:35px;
+      width:40px;
+      height:40px;
+      font-size:26px;
       cursor:${p => p.cursor};
-      transition: .5;
-
+      transition: .4s;
+      
       :hover{
             transform: scale(${p => p.scale});
       }
@@ -72,7 +77,7 @@ export const Answer = styled.div`
     
 `;
 
-export const AnswerItem = styled.h1<Pick<Props, 'fs' | 'color'>>`
+export const AnswerItem = styled.p<Pick<AnswerProps, 'fs' | 'color' | 'AnswerType'>>`
       border:2px solid black;
       padding: 5px 20px;
       text-align:Center;
@@ -82,10 +87,10 @@ export const AnswerItem = styled.h1<Pick<Props, 'fs' | 'color'>>`
       background-color: ${p => p.color};
       cursor: default;
 
-      img{
-            width:300px;
-            height:220px; 
-      }
+      ${p => p.AnswerType === 'OnlySelectQuestion' && 'img{ width:300px; height:280px; }'}
+      ${p => p.AnswerType === 'AlternativesInImage' && 'img{ width:300px; height:200px; }'}
+      ${p => p.AnswerType === 'OnlySelectQuestionWithImage' && 'img{ width:300px; height:200px; }'}
+
 `;
 
 export const Footer = styled.footer`

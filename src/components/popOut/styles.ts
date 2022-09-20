@@ -26,7 +26,8 @@ export const ButtonClose = styled.button`
   font-weight:bold;
   opacity: .85;
   background-color: #cccccc;
-  font-size:14px;
+  font-size:18px;
+  font-family: 'Bubblegum Sans', cursive;
   border-radius: 45px;
   :hover{
     background-color:White;
@@ -65,9 +66,8 @@ export const Button = styled.button`
     font-weight:bold;
     opacity: .85;
     background-color: #cccccc;
-    font-size:14px;
-
-
+    font-size:18px;
+    font-family: 'Bubblegum Sans', cursive;
     :hover{
       background-color:White;
       opacity: 1;

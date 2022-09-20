@@ -17,7 +17,6 @@ export const Header = styled.header`
       width:100%;
 
       button{
-        transform: scaleX(-1);
         font-family: 'Indie Flower', cursive;
         font-size:24px;
         width:45px;
@@ -30,8 +29,12 @@ export const Header = styled.header`
         color:white;
         border-radius:45px;
         cursor:pointer;
+        transition: .4s;
       }
 
+      button:hover{
+        transform: scale(1.10);
+      }
 `;
 
 export const Title = styled.h1`
@@ -67,6 +70,7 @@ export const SubjectsItem = styled.div`
       cursor:pointer;
       box-shadow: 5px 5px 8px 3px rgba(0,0,0,0.63);
       transition: .2s;
+      
       :hover{
         transform: scale(1.05);
 

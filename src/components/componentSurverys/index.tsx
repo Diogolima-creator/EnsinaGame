@@ -47,12 +47,13 @@ export const ComponentSurveys = () => {
     setRandomized(1)
   }
   
+
   return( 
     <C.Container>
         <C.NumberQuestion>
             <C.NumberQuestionItem>{CountQuestions}.</C.NumberQuestionItem>
         </C.NumberQuestion>
-        <C.QuestionAnswer>
+        <C.QuestionAnswer QuestionType={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType}>
           <C.Question>
               {Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Question}
           </C.Question>
@@ -61,12 +62,16 @@ export const ComponentSurveys = () => {
             
           </img>}
           <C.Answer>
-              { (Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'OnlySelectQuestion' || Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'ImageInQuestion') && Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string,key:number) => (
-                <C.AnswerItem fs={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 16 : 24} onClick={() => handleChoiceAlternative(key)}>{alternative}</C.AnswerItem>
+              { (Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'OnlySelectQuestion' || Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'ImageInQuestion') && Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string[],key:number) => (
+                <C.AnswerItem AnswerType={'OnlySelectQuestion'} fs={Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionImg !== '' ? 18 : 24} onClick={() => handleChoiceAlternative(key)}>{alternative[0]}</C.AnswerItem>
               ))}
-              {Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'AlternativesInImage' && Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string,key:number) => (
-                <C.AnswerItem fs= {16} onClick={() => handleChoiceAlternative(key)}><img src={alternative} alt='' /></C.AnswerItem>
+              {Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'AlternativesInImage' && Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string[],key:number) => (
+                <C.AnswerItem AnswerType={'AlternativesInImage'} fs= {20} onClick={() => handleChoiceAlternative(key)}><img src={alternative[0]} alt='' /></C.AnswerItem>
               ))}
+              {Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].QuestionType === 'OnlySelectQuestionWithImage' && Questions[gradeSelectedPos][subjectSelectedPos][QuestionsPosition].Alternatives.map((alternative:string[],key:number) => (
+                <C.AnswerItem AnswerType={'OnlySelectQuestionWithImage'} fs= {32} onClick={() => handleChoiceAlternative(key)}>{alternative[0]}<img src={alternative[1]} alt='' /></C.AnswerItem>
+              ))
+              }
           </C.Answer>
         </C.QuestionAnswer>
     </C.Container>
