@@ -1,7 +1,7 @@
 import Abacaxi from './abacaxi.jpg'
 import Açúcar from './acucar.jpg'
 import Água from './agua.jpg'
-import Almoço from './Almoco.jpg'
+import Almoco from './almoco.jpg'
 import Amor from './amor.jpg'
 import Apostila from './Apostila.png'
 import Bala from './bala.jpg'
@@ -65,7 +65,7 @@ import Zen from './zen.jpg'
 
 
 export const Objetos = {
-  Abacaxi,Açúcar,Água,Almoço,Amor,Apostila,Bala,Bola,Beijo,Blusa,Cachorro,Caderno,
+  Abacaxi,Açúcar,Água,Almoco,Amor,Apostila,Bala,Bola,Beijo,Blusa,Cachorro,Caderno,
 Casa,Cidade,Colher,Coração,Costas,Dinheiro,Diogo,Diego,Donzela,Faca,Foca,Fruta,
 Gato,Geladeira,Gelatina,Gelo,Gilvan,Girassol,Grama,Jaqueta,Jovem,
 Laranja,Leão,Lençol,Limpar,Loira,Lua,Macaco,Medico,Medir,Melancia,
