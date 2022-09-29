@@ -31,7 +31,7 @@ export const QuestionAnswer = styled.div<Pick<QuestionProps, 'QuestionType'>> `
       align-items:center;
 
       ${p => p.QuestionType === 'OnlySelectQuestion' && 'img{ width:700px; height:400px; }'}
-      ${p => p.QuestionType === 'ImageInQuestion' && 'img{ width:300px; height:400px; }'}
+      ${p => p.QuestionType === 'ImageInQuestion' && 'img{ width:520px; height:400px; }'}
 `;
 
 export const HeaderReview = styled.header`
